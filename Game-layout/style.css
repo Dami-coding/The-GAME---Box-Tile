@@ -1,0 +1,92 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.container1{
+  background-color: rgb(255, 63, 129);
+  height: 400px;
+  width: 100%;
+  padding: 24px
+  margin: 0px auto;
+}
+
+div.square{
+  background-color: rgb(255, 63, 129);
+  float-left: 19px;
+  height: 80px;
+  width: 100%;
+}
+
+div.box{
+  background-color: rgb(255, 189, 19);
+  margin: 0 auto;
+  height: 80px;
+  width: 100%;
+}
+/*
+div {
+  background-color: black;
+  width: 100%;
+  margin: 2px;
+}
+
+div.container1{
+  float: left;
+  width: 32%;
+  height: 600px;
+  margin: 0 auto;
+}
+
+div.container2{
+  float: left;
+  width: 32%;
+  height: 600px;
+  margin: 0 auto;
+  padding: -10px 50px;
+}
+
+div.container3{
+  width: 32%;
+  height: 600px;
+  margin: 0 auto;
+  padding: -10px 50px;
+}
+
+div.square{
+  background-color: rgb(255, 63, 129);
+  float-left: 19px;
+  height: 80px;
+  width: 100%;
+}
+
+div.box{
+  background-color: rgb(255, 189, 19);
+  margin: 0 auto;
+  height: 80px;
+  width: 100%;
+}
+
+div.level-options{
+  background-color: red;
+  margin-bottom: 10px;
+}
+
+div.level-b{
+  background-color: red;
+clear: both;
+  margin-bottom: 1px
+}
+
+
+div.start {
+clear: both;
+  color: white
+  padding: 25px 25px 25px 25px;
+
+}
+*/
+
+
+

@@ -130,7 +130,7 @@ setupBoard = function(callback) {
 	$display = $(display);
 
 	// Empty the body to make sure
-	//$body.empty();
+	$body.empty();
 
 	audio = new Audio();
 	audio.id = "mySong";

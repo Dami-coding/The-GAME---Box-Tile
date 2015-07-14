@@ -1,6 +1,7 @@
 
 var $body,
 $display,
+$displayB,
 $board,
 $tiles,
 $randomNumber,
@@ -13,6 +14,10 @@ boardWidth = boardHeight = 400,
 tileWidth,
 tileHeight,
 audio,
+winningAudio,
+loosingAudio,
+
+
 
 compareArrays = function() {
 	// Turn them into a string and compare
@@ -29,6 +34,7 @@ checkWin = function(){
 		base = base+1;
 		level = Math.pow(base,2);
 	} else {
+		loosingAudio.play();
 		$display.text("Try again");
 	};
 
@@ -59,6 +65,7 @@ playGame = function() {
 		}
 	});
 
+
 	// Setup the mousedown and up states...
 	$tiles.on("mousedown", function(){
 		$(this).addClass("mousedown");
@@ -67,19 +74,6 @@ playGame = function() {
 		$(this).removeClass("mousedown");
 	})
 },
-
-//   // Setup the click sound 
-//    $soundSource = function(){
-//    $sound.setAttribute("src", "../sound/Electrical_Sweep-Sweeper-1760111493.mp3"); 
-//    $.get(); 
-//    }
-//    $(".playSound").click(function() { 
-//    	$sound.push($tiles.index(this));
-//		if (guess.length === base) {
-//			checkWin();
-//		}	
-//
-//    });  
 
 
 chooseRandomTile = function(i){
@@ -123,11 +117,13 @@ setupBoard = function(callback) {
 
 	// Create a new element in 'memory' using pure JS
 	var board = document.createElement('ul'),
-	display = document.createElement('h1');
+	display = document.createElement('h1'),
+	instructions = document.createElement('h2');
 
 	// On the left-hand side the $ is just part of the variable name 
 	$body = $('body');
 	$display = $(display);
+	$instructions = $(instructions);
 
 	// Empty the body to make sure
 	$body.empty();
@@ -135,8 +131,14 @@ setupBoard = function(callback) {
 	audio = new Audio();
 	audio.id = "mySong";
 	audio.src = "./sound/winning-sound.mp3";
+
 	$body.append(audio);
 
+	loosingAudio = new Audio()
+	loosingAudio.id = "mySong2"
+	loosingAudio.src = "./sound/gameover-sound.mp3";
+
+	$body.append(loosingAudio);
 
 
 	// Make the element in 'memory' a jQuery Object
@@ -151,10 +153,10 @@ setupBoard = function(callback) {
 	$board.css('width', boardWidth+"px");
 	$board.css('height', boardHeight+"px");
 
-	$display.html("Let's start...")
-	$display.html("Welcome to Mind-Tiles")
+	$display.html("Welcome to Block-Mind-Tiles")
+	$instructions.html("Let's start...")
 	// Add display & board to body
-	$body.append($display).append($board);
+	$body.append($display).append($instructions).append($board);
 
 	// Callback is still the createCombination function
 	setupTiles(callback);

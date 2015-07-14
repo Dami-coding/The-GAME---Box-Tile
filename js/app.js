@@ -9,7 +9,7 @@ sequence = [],
 guess = [],
 base = 2,
 level = Math.pow(base,2),
-boardWidth = boardHeight = 500,
+boardWidth = boardHeight = 400,
 tileWidth,
 tileHeight,
 audio,
@@ -130,12 +130,14 @@ setupBoard = function(callback) {
 	$display = $(display);
 
 	// Empty the body to make sure
-	$body.empty();
+	//$body.empty();
 
 	audio = new Audio();
 	audio.id = "mySong";
 	audio.src = "./sound/winning-sound.mp3";
 	$body.append(audio);
+
+
 
 	// Make the element in 'memory' a jQuery Object
 	$board = $(board);

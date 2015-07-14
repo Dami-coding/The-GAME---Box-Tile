@@ -5,25 +5,30 @@
 html, body{
 	height: 100%;
 	min-height: 100%;
+	width: 100%
 }
 
 body {
-	background: url("../image/wooden-background.jpg");
+	background-position: center;
+	background: url("../image/wooden-background1.jpg");
 	font-family: arial, 'Roboto', sans-serif;
 	font-size: 17px;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 a {
-
+position: absolute;
+top: 40px;
+text-align: center;
 }
 
 h1 {
 	color: white;
 	position: absolute;
-	top: 90px;
+	top: 30px;
 	left: 50%;
 	text-align: center;
 	width: 600px;

@@ -10,7 +10,7 @@ sequence = [],
 guess = [],
 base = 2,
 level = Math.pow(base,2),
-boardWidth = boardHeight = 400,
+boardWidth = boardHeight = 300,
 tileWidth,
 tileHeight,
 audio,
@@ -153,7 +153,7 @@ setupBoard = function(callback) {
 	$board.css('width', boardWidth+"px");
 	$board.css('height', boardHeight+"px");
 
-	$instructions.html("Welcome to Block-Mind-Tiles")
+	$instructions.html("Dami")
 	$display.html("Welcome to Block-Mind-Tiles")
 
 	// Add display & board to body

@@ -12,7 +12,7 @@ html, body{
 body {
 	background: url("../image/super-mario.jpg");
 	background-position: center;
-	background-size: 1900px;
+
 	font-family: arial, 'Roboto', sans-serif;
 	font-size: 17px;
 	text-align: center;
@@ -26,7 +26,7 @@ body {
 h1 {
 	color: white;
 	position: absolute;
-	top: 30px;
+	top: 90px;
 	left: 50%;
 	width: 600px;
 	margin-left: -300px;
@@ -35,8 +35,8 @@ h1 {
 h2 {
 	color: white;
 	position: absolute;
-	top: 100px;
-	left: 50%;
+	top: 325px;
+	left: 84%;
 	width: 600px;
 	margin-left: -300px;
 }

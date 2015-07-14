@@ -29,7 +29,7 @@ checkWin = function(){
 	if (compareArrays()) {
 		$display.text("Correct");
 		// Increase the base by 1
-		audio.play();
+		winningAudio.play();
 		// Delay...
 		base = base+1;
 		level = Math.pow(base,2);
@@ -128,9 +128,9 @@ setupBoard = function(callback) {
 	// Empty the body to make sure
 	$body.empty();
 
-	audio = new Audio();
-	audio.id = "mySong";
-	audio.src = "./sound/winning-sound.mp3";
+	winningAudio = new Audio();
+	winningAudio.id = "mySong";
+	winningAudio.src = "./sound/winning-sound.mp3";
 
 	$body.append(audio);
 
@@ -153,8 +153,9 @@ setupBoard = function(callback) {
 	$board.css('width', boardWidth+"px");
 	$board.css('height', boardHeight+"px");
 
+	$instructions.html("Welcome to Block-Mind-Tiles")
 	$display.html("Welcome to Block-Mind-Tiles")
-	$instructions.html("Let's start...")
+
 	// Add display & board to body
 	$body.append($display).append($instructions).append($board);
 
@@ -214,6 +215,7 @@ start = function(){
 // Another way of writing:
 // ... $(document).ready(){}
 $(function(){
+
 	start();
 
 });

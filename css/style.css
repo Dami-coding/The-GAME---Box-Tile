@@ -10,8 +10,9 @@ html, body{
 }
 
 body {
-	background: url("../image/wooden-background1a.jpg");
+	background: url("../image/wooden-background1.jpg");
 	background-position: center;
+	background-size: 1900px;
 	font-family: arial, 'Roboto', sans-serif;
 	font-size: 17px;
 	text-align: center;

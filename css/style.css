@@ -9,15 +9,21 @@ html, body{
 
 body {
 	background: url("../image/wooden-background.jpg");
+	font-family: arial, 'Roboto', sans-serif;
+	font-size: 17px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+a {
+
+}
+
 h1 {
 	color: white;
 	position: absolute;
-	top: 20px;
+	top: 90px;
 	left: 50%;
 	text-align: center;
 	width: 600px;
@@ -28,15 +34,13 @@ h1 {
 	background: white;
 	margin: 0 auto;
 	border-radius: 9px;
-	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 2px 24px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 24px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 24px -1px rgba(0,0,0,0.75);
 }
 
 .tile {
 	border: 2px solid brown;
-
-
 	background: rgba(226,226,226,1);
 	background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,0.82) 50%, rgba(209,209,209,0.81) 51%, rgba(254,254,254,0.63) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,0.82)), color-stop(51%, rgba(209,209,209,0.81)), color-stop(100%, rgba(254,254,254,0.63)));
@@ -59,11 +63,11 @@ li {
 }
 
 .on {
-	background-color: black;
+	background-color: red;
 }
 
 .active li:hover {
-	background: yellow;
+	background: lightblue;
 }
 
 .active li.mousedown:hover {

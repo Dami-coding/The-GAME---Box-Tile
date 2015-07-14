@@ -1,16 +1,18 @@
+
 var $body,
-		$display,
-		$board,
-		$tiles,
-		$randomNumber,
-		combination = [],
-		sequence = [],
-		guess = [],
-		base = 2,
-		level = Math.pow(base,2),
-		boardWidth = boardHeight = 600,
-		tileWidth,
-		tileHeight,
+$display,
+$board,
+$tiles,
+$randomNumber,
+combination = [],
+sequence = [],
+guess = [],
+base = 2,
+level = Math.pow(base,2),
+boardWidth = boardHeight = 500,
+tileWidth,
+tileHeight,
+audio,
 
 compareArrays = function() {
 	// Turn them into a string and compare
@@ -22,6 +24,8 @@ checkWin = function(){
 	if (compareArrays()) {
 		$display.text("Correct");
 		// Increase the base by 1
+		audio.play();
+		// Delay...
 		base = base+1;
 		level = Math.pow(base,2);
 	} else {
@@ -38,7 +42,9 @@ checkWin = function(){
 	// Remove the mousedown event listeners
 	$tiles.off();
 
-	setupBoard(createCombination)
+	setTimeout(function(){
+		setupBoard(createCombination)
+	}, 3000);
 }
 
 playGame = function() {
@@ -62,6 +68,20 @@ playGame = function() {
 	})
 },
 
+//   // Setup the click sound 
+//    $soundSource = function(){
+//    $sound.setAttribute("src", "../sound/Electrical_Sweep-Sweeper-1760111493.mp3"); 
+//    $.get(); 
+//    }
+//    $(".playSound").click(function() { 
+//    	$sound.push($tiles.index(this));
+//		if (guess.length === base) {
+//			checkWin();
+//		}	
+//
+//    });  
+
+
 chooseRandomTile = function(i){
 	$tiles = $('li');
 	randomNumber = Math.round(Math.random() * ($tiles.length -1));
@@ -72,6 +92,7 @@ chooseRandomTile = function(i){
 	// Return the randomly selected tile
 	return $tiles[randomNumber]
 },
+
 
 setupTiles = function(callback) {
 	var i = 0;
@@ -85,11 +106,11 @@ setupTiles = function(callback) {
 				// Make into a jQuery object 
 				$tile = $(tile);
 
-		$tile.addClass('tile');
-		$tile.css('width', tileWidth+"px");
-		$tile.css('height', tileHeight+"px");
-		$board.append($tile);
-	}
+				$tile.addClass('tile');
+				$tile.css('width', tileWidth+"px");
+				$tile.css('height', tileHeight+"px");
+				$board.append($tile);
+			}
 
 	// Run the function we passed in as an argument
 	// ...in this case, createCombination
@@ -102,7 +123,7 @@ setupBoard = function(callback) {
 
 	// Create a new element in 'memory' using pure JS
 	var board = document.createElement('ul'),
-			display = document.createElement('h1');
+	display = document.createElement('h1');
 
 	// On the left-hand side the $ is just part of the variable name 
 	$body = $('body');
@@ -110,6 +131,11 @@ setupBoard = function(callback) {
 
 	// Empty the body to make sure
 	$body.empty();
+
+	audio = new Audio();
+	audio.id = "mySong";
+	audio.src = "./sound/winning-sound.mp3";
+	$body.append(audio);
 
 	// Make the element in 'memory' a jQuery Object
 	$board = $(board);
@@ -124,13 +150,14 @@ setupBoard = function(callback) {
 	$board.css('height', boardHeight+"px");
 
 	$display.html("Let's start...")
-
+	$display.html("Welcome to Mind-Tiles")
 	// Add display & board to body
 	$body.append($display).append($board);
 
 	// Callback is still the createCombination function
 	setupTiles(callback);
 },
+
 
 createCombination = function() {
 	var i = 0;
@@ -151,7 +178,7 @@ createCombination = function() {
 			// Choose a random tile
 			// ... pass i
 			var tile = chooseRandomTile(i),
-					$tile = $(tile);
+			$tile = $(tile);
 
 			$tile.addClass('on');
 			
@@ -184,4 +211,5 @@ start = function(){
 // ... $(document).ready(){}
 $(function(){
 	start();
+
 });

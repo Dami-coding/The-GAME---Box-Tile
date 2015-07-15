@@ -27,7 +27,7 @@ compareArrays = function() {
 
 checkWin = function(){
 	if (compareArrays()) {
-		$display.text("Correct");
+		$display.text("You got it!");
 		// Increase the base by 1
 		winningAudio.play();
 		// Delay...
@@ -35,7 +35,7 @@ checkWin = function(){
 		level = Math.pow(base,2);
 	} else {
 		loosingAudio.play();
-		$display.text("Try again");
+		$display.text("Have another go!");
 	};
 
 	combination = [];

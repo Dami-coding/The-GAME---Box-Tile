@@ -10,7 +10,7 @@ html, body{
 }
 
 body {
-	background: url("../image/super-mario.jpg");
+	background: url("../image/wooden-background1.jpg");
 	background-position: center;
 
 	font-family: arial, 'Roboto', sans-serif;
@@ -51,7 +51,7 @@ h2 {
 }
 
 .display{
-	height: 
+	boarder-color : white;
 }
 
 .tile {
